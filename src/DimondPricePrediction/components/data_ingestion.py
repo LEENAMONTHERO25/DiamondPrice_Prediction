@@ -11,7 +11,7 @@ from pathlib import Path
 
 class DataIngestionConfig:
     raw_data_path:str=os.path.join("artifacts","raw.csv")
-    train_data_path:str=os.path.join("artifacts","train.csv")
+    train_data_path:str=os.path.join("artifacts","train.csv")    #configaration of components
     test_data_path:str=os.path.join("artifacts","test.csv")
 
 
@@ -34,7 +34,7 @@ class DataIngestion:
             
             logging.info("here i have performed train test split")
             
-            train_data,test_data=train_test_split(data,test_size=0.25)
+            train_data,test_data=train_test_split(data,test_size=0.25)   
             logging.info("train test split completed")
             
             train_data.to_csv(self.ingestion_config.train_data_path,index=False)
